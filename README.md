@@ -1,7 +1,7 @@
 # Basic Graphics Library
 
 ## Name
-Current Name: WFM (Window for Mac) 
+Current Name: SGL (Window for Mac) 
 
 ## About
 My goal is to develop a basic graphics library from scratch, without relying on existing frameworks like SDL2 or SFML. I focused on constructing a window from the ground up using the Cocoa API and Objective-C since I use a Mac. However, I also want to ensure that the library is cross-platform and can run on Windows, MacOS, and Linux.

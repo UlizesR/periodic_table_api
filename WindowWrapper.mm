@@ -45,14 +45,14 @@
 @end
 
 
-WFM_Window::WFM_Window(const std::string& title, int width, int height, const WFM_Color& color) {
+SGL_Window::SGL_Window(const std::string& title, int width, int height, const SGL_Color& color) {
 }
 
-WFM_Window::~WFM_Window() {
+SGL_Window::~SGL_Window() {
 }
 
-WFM_Window* WFM_CreateWindow(const std::string& title, int width, int height, const WFM_Color& color) {
-    WFM_Window* window = new WFM_Window(title, width, height, color);
+SGL_Window* SGL_CreateWindow(const std::string& title, int width, int height, const SGL_Color& color) {
+    SGL_Window* window = new SGL_Window(title, width, height, color);
 
     @autoreleasepool {
         NSString *nsTitle = [NSString stringWithCString:title.c_str() encoding:NSUTF8StringEncoding];
@@ -78,14 +78,14 @@ WFM_Window* WFM_CreateWindow(const std::string& title, int width, int height, co
 }
 
 
-void WFM_DestroyWindow(WFM_Window* window) {
+void SGL_DestroyWindow(SGL_Window* window) {
     delete window;
 }
 
-bool WFM_PollEvent(WFM_Event* event) {
+bool SGL_PollEvent(SGL_Event* event) {
     AppDelegate* appDelegate = (AppDelegate *)[NSApp delegate];
     if (!appDelegate.shouldKeepRunning) {
-        event->type = WFM_QUIT;
+        event->type = SGL_QUIT;
         return true;
     }
     return false;

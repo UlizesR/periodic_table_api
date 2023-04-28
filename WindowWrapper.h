@@ -3,25 +3,25 @@
 
 #include <string>
 
-struct WFM_Color {
+struct SGL_Color {
     float r, g, b, a;
 };
 
-struct WFM_Window {
-    WFM_Window(const std::string& title, int width, int height, const WFM_Color& color);
-    ~WFM_Window();
+struct SGL_Window {
+    SGL_Window(const std::string& title, int width, int height, const SGL_Color& color);
+    ~SGL_Window();
 };
 
-enum WFM_EventType {
-    WFM_QUIT
+enum SGL_EventType {
+    SGL_QUIT
 };
 
-struct WFM_Event {
-    WFM_EventType type;
+struct SGL_Event {
+    SGL_EventType type;
 };
 
-WFM_Window* WFM_CreateWindow(const std::string& title, int width, int height, const WFM_Color& color);
-void WFM_DestroyWindow(WFM_Window* window);
-bool WFM_PollEvent(WFM_Event* event);
+SGL_Window* SGL_CreateWindow(const std::string& title, int width, int height, const SGL_Color& color);
+void SGL_DestroyWindow(SGL_Window* window);
+bool SGL_PollEvent(SGL_Event* event);
 
 #endif // WINDOWWRAPPER_H
