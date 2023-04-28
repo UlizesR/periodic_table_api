@@ -1,7 +1,7 @@
 #ifndef COLORS_H
 #define COLORS_H
 
-#include "WindowWrapper.h"
+#include "sgl_window.h"
 
 const SGL_Color SGL_RED             = {1.0f, 0.0f, 0.0f, 1.0f};
 const SGL_Color SGL_GREEN           = {0.0f, 1.0f, 0.0f, 1.0f};

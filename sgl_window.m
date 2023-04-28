@@ -1,5 +1,10 @@
 #import <Cocoa/Cocoa.h>
-#include "WindowWrapper.h"
+#include "sgl_window.h"
+
+// Add a complete type definition for SGL_Window
+struct SGL_Window {
+    void *reserved;
+};
 
 @interface AppDelegate : NSObject <NSApplicationDelegate, NSWindowDelegate>
 @property (nonatomic, strong) NSWindow *window;
@@ -44,20 +49,13 @@
 
 @end
 
-
-SGL_Window::SGL_Window(const std::string& title, int width, int height, const SGL_Color& color) {
-}
-
-SGL_Window::~SGL_Window() {
-}
-
-SGL_Window* SGL_CreateWindow(const std::string& title, int width, int height, const SGL_Color& color) {
-    SGL_Window* window = new SGL_Window(title, width, height, color);
+SGL_Window *SGL_CreateWindow(const char *title, int width, int height, SGL_Color color) {
+    SGL_Window *window = (SGL_Window *)malloc(sizeof(SGL_Window));
 
     @autoreleasepool {
-        NSString *nsTitle = [NSString stringWithCString:title.c_str() encoding:NSUTF8StringEncoding];
-        CGFloat nsWidth = static_cast<CGFloat>(width);
-        CGFloat nsHeight = static_cast<CGFloat>(height);
+        NSString *nsTitle = [NSString stringWithCString:title encoding:NSUTF8StringEncoding];
+        CGFloat nsWidth = (CGFloat)width;
+        CGFloat nsHeight = (CGFloat)height;
 
         NSApplication *app = [NSApplication sharedApplication];
         AppDelegate *appDelegate = [[AppDelegate alloc] initWithTitle:nsTitle width:nsWidth height:nsHeight];
@@ -77,13 +75,14 @@ SGL_Window* SGL_CreateWindow(const std::string& title, int width, int height, co
     return window;
 }
 
-
-void SGL_DestroyWindow(SGL_Window* window) {
-    delete window;
+void SGL_DestroyWindow(SGL_Window *window) {
+    if (window) {
+        free(window);
+    }
 }
 
-bool SGL_PollEvent(SGL_Event* event) {
-    AppDelegate* appDelegate = (AppDelegate *)[NSApp delegate];
+bool SGL_PollEvent(SGL_Event *event) {
+    AppDelegate *appDelegate = (AppDelegate *)[NSApp delegate];
     if (!appDelegate.shouldKeepRunning) {
         event->type = SGL_QUIT;
         return true;
