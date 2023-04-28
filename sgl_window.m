@@ -1,5 +1,6 @@
 #import <Cocoa/Cocoa.h>
 #include "sgl_window.h"
+#include "sgl_errors.h"
 
 // Add a complete type definition for SGL_Window
 struct SGL_Window {
@@ -50,7 +51,13 @@ struct SGL_Window {
 @end
 
 SGL_Window *SGL_CreateWindow(const char *title, int width, int height, SGL_Color color) {
+    SGL_ClearError(); // Clear any previous errors
+
     SGL_Window *window = (SGL_Window *)malloc(sizeof(SGL_Window));
+    if (window == NULL) {
+        SGL_SetError("Failed to allocate memory for SGL_Window");
+        return NULL;
+    }
 
     @autoreleasepool {
         NSString *nsTitle = [NSString stringWithCString:title encoding:NSUTF8StringEncoding];
@@ -58,7 +65,14 @@ SGL_Window *SGL_CreateWindow(const char *title, int width, int height, SGL_Color
         CGFloat nsHeight = (CGFloat)height;
 
         NSApplication *app = [NSApplication sharedApplication];
-        AppDelegate *appDelegate = [[AppDelegate alloc] initWithTitle:nsTitle width:nsWidth height:nsHeight];
+AppDelegate *appDelegate = [[AppDelegate alloc] initWithTitle:nsTitle width:nsWidth height:nsHeight];
+
+        // Check for errors
+        if (SGL_HasError()) {
+            free(window);
+            return NULL;
+        }
+
         [app setDelegate:appDelegate];
 
         // Set the background color
