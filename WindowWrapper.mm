@@ -38,17 +38,21 @@
     [NSApp terminate:self];
 }
 
+- (void)setBackgroundColor:(NSColor *)color {
+    [_window setBackgroundColor:color];
+}
+
 @end
 
 
-WFM_Window::WFM_Window(const std::string& title, int width, int height) {
+WFM_Window::WFM_Window(const std::string& title, int width, int height, const WFM_Color& color) {
 }
 
 WFM_Window::~WFM_Window() {
 }
 
-WFM_Window* WFM_CreateWindow(const std::string& title, int width, int height) {
-    WFM_Window* window = new WFM_Window(title, width, height);
+WFM_Window* WFM_CreateWindow(const std::string& title, int width, int height, const WFM_Color& color) {
+    WFM_Window* window = new WFM_Window(title, width, height, color);
 
     @autoreleasepool {
         NSString *nsTitle = [NSString stringWithCString:title.c_str() encoding:NSUTF8StringEncoding];
@@ -58,6 +62,15 @@ WFM_Window* WFM_CreateWindow(const std::string& title, int width, int height) {
         NSApplication *app = [NSApplication sharedApplication];
         AppDelegate *appDelegate = [[AppDelegate alloc] initWithTitle:nsTitle width:nsWidth height:nsHeight];
         [app setDelegate:appDelegate];
+
+        // Set the background color
+        CGFloat red = color.r;
+        CGFloat green = color.g;
+        CGFloat blue = color.b;
+        CGFloat alpha = color.a;
+        NSColor *backgroundColor = [NSColor colorWithSRGBRed:red green:green blue:blue alpha:alpha];
+        [appDelegate setBackgroundColor:backgroundColor];
+
         [app run];
     }
 
