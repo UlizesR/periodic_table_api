@@ -3,6 +3,9 @@
 ## Name
 Current Name: WFM (Window for Mac) 
 
+---
 
 ## About
-My objective is to develop a basic graphics library from the ground up without relying on existing libraries such as SDL2 or SFML. I aimed to construct a window from scratch and thus, I invested time in learning how to do it using the Cocoa API and Objective-C since I utilize a Mac. However, my ultimate goal is to ensure that the library is compatible with multiple operating systems, namely Windows, MacOS, and Linux.
+My goal is to develop a basic graphics library from scratch, without relying on existing frameworks like SDL2 or SFML. I focused on constructing a window from the ground up using the Cocoa API and Objective-C since I use a Mac. However, I also want to ensure that the library is cross-platform and can run on Windows, MacOS, and Linux.
+
+To make the library accessible to everyone, I plan on making it open-source, allowing anyone to use, modify, or contribute to it. As I continue building the code, I may make adjustments to the folder structure to optimize it.
