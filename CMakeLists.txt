@@ -17,7 +17,6 @@ endif()
 add_library(sgl STATIC
     SGL/src/sgl_errors.c
     SGL/src/cocoa/sgl_window.m
-    SGL/src/sgl_draw.c  
 )
 
 # Set the include directories for the SGL library
