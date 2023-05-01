@@ -3,6 +3,10 @@
 
 #include <stdbool.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct SGL_Color {
     float r, g, b, a;
 } SGL_Color;
@@ -25,5 +29,9 @@ void SGL_DestroyWindow(SGL_Window *window);
 
 // Check for events
 bool SGL_PollEvent(SGL_Event *event);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // SGL_WINDOW_H
