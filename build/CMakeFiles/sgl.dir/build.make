@@ -97,19 +97,35 @@ CMakeFiles/sgl.dir/SGL/src/cocoa/sgl_window.m.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/sgl.dir/SGL/src/cocoa/sgl_window.m.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/uliraudales/coding/github/SGL/SGL/src/cocoa/sgl_window.m -o CMakeFiles/sgl.dir/SGL/src/cocoa/sgl_window.m.s
 
+CMakeFiles/sgl.dir/SGL/src/sgl_draw.c.o: CMakeFiles/sgl.dir/flags.make
+CMakeFiles/sgl.dir/SGL/src/sgl_draw.c.o: /Users/uliraudales/coding/github/SGL/SGL/src/sgl_draw.c
+CMakeFiles/sgl.dir/SGL/src/sgl_draw.c.o: CMakeFiles/sgl.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/uliraudales/coding/github/SGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/sgl.dir/SGL/src/sgl_draw.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/sgl.dir/SGL/src/sgl_draw.c.o -MF CMakeFiles/sgl.dir/SGL/src/sgl_draw.c.o.d -o CMakeFiles/sgl.dir/SGL/src/sgl_draw.c.o -c /Users/uliraudales/coding/github/SGL/SGL/src/sgl_draw.c
+
+CMakeFiles/sgl.dir/SGL/src/sgl_draw.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/sgl.dir/SGL/src/sgl_draw.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/uliraudales/coding/github/SGL/SGL/src/sgl_draw.c > CMakeFiles/sgl.dir/SGL/src/sgl_draw.c.i
+
+CMakeFiles/sgl.dir/SGL/src/sgl_draw.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/sgl.dir/SGL/src/sgl_draw.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/uliraudales/coding/github/SGL/SGL/src/sgl_draw.c -o CMakeFiles/sgl.dir/SGL/src/sgl_draw.c.s
+
 # Object files for target sgl
 sgl_OBJECTS = \
 "CMakeFiles/sgl.dir/SGL/src/sgl_errors.c.o" \
-"CMakeFiles/sgl.dir/SGL/src/cocoa/sgl_window.m.o"
+"CMakeFiles/sgl.dir/SGL/src/cocoa/sgl_window.m.o" \
+"CMakeFiles/sgl.dir/SGL/src/sgl_draw.c.o"
 
 # External object files for target sgl
 sgl_EXTERNAL_OBJECTS =
 
 libsgl.a: CMakeFiles/sgl.dir/SGL/src/sgl_errors.c.o
 libsgl.a: CMakeFiles/sgl.dir/SGL/src/cocoa/sgl_window.m.o
+libsgl.a: CMakeFiles/sgl.dir/SGL/src/sgl_draw.c.o
 libsgl.a: CMakeFiles/sgl.dir/build.make
 libsgl.a: CMakeFiles/sgl.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/uliraudales/coding/github/SGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library libsgl.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/uliraudales/coding/github/SGL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C static library libsgl.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/sgl.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sgl.dir/link.txt --verbose=$(VERBOSE)
 

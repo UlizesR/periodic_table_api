@@ -65,7 +65,7 @@ SGL_Window *SGL_CreateWindow(const char *title, int width, int height, SGL_Color
         CGFloat nsHeight = (CGFloat)height;
 
         NSApplication *app = [NSApplication sharedApplication];
-AppDelegate *appDelegate = [[AppDelegate alloc] initWithTitle:nsTitle width:nsWidth height:nsHeight];
+        AppDelegate *appDelegate = [[AppDelegate alloc] initWithTitle:nsTitle width:nsWidth height:nsHeight];
 
         // Check for errors
         if (SGL_HasError()) {
@@ -101,5 +101,7 @@ bool SGL_PollEvent(SGL_Event *event) {
         event->type = SGL_QUIT;
         return true;
     }
+    printf("Hello, World!\n");
     return false;
 }
+

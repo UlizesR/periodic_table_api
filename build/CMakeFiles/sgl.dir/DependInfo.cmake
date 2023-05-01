@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/uliraudales/coding/github/SGL/SGL/src/cocoa/sgl_window.m" "CMakeFiles/sgl.dir/SGL/src/cocoa/sgl_window.m.o" "gcc" "CMakeFiles/sgl.dir/SGL/src/cocoa/sgl_window.m.o.d"
+  "/Users/uliraudales/coding/github/SGL/SGL/src/sgl_draw.c" "CMakeFiles/sgl.dir/SGL/src/sgl_draw.c.o" "gcc" "CMakeFiles/sgl.dir/SGL/src/sgl_draw.c.o.d"
   "/Users/uliraudales/coding/github/SGL/SGL/src/sgl_errors.c" "CMakeFiles/sgl.dir/SGL/src/sgl_errors.c.o" "gcc" "CMakeFiles/sgl.dir/SGL/src/sgl_errors.c.o.d"
   )
 

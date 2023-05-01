@@ -3,6 +3,8 @@
 #include <SGL/sgl.h>
 
 int main(int argc, const char * argv[]) {
+    // std::cout << "Hello, World!\n";
+
     SGL_Window *window = SGL_CreateWindow("SGL Window", 640, 480, SGL_DARKSKYBLUE);
 
     if (SGL_HasError()) {
@@ -23,7 +25,6 @@ int main(int argc, const char * argv[]) {
     }
 
     SGL_DestroyWindow(window);
-    std::cout << "Hello, World!\n" << std::endl;
 
     return 0;
 }

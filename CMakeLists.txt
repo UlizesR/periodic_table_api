@@ -17,6 +17,7 @@ endif()
 add_library(sgl STATIC
     SGL/src/sgl_errors.c
     SGL/src/cocoa/sgl_window.m
+    SGL/src/sgl_draw.c  
 )
 
 # Set the include directories for the SGL library
@@ -28,7 +29,7 @@ target_include_directories(sgl PUBLIC
 
 # Link the SGL library with the required macOS frameworks
 if(APPLE)
-    target_link_libraries(sgl ${COCOA_LIBRARY} ${FOUNDATION_LIBRARY})
+    target_link_libraries(sgl ${COCOA_LIBRARY} ${FOUNDATION_LIBRARY} "-framework CoreGraphics") # Add "-framework CoreGraphics"
 endif()
 
 # Add the app executable

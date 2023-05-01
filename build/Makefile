@@ -166,6 +166,30 @@ SGL/src/cocoa/sgl_window.m.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sgl.dir/build.make CMakeFiles/sgl.dir/SGL/src/cocoa/sgl_window.m.s
 .PHONY : SGL/src/cocoa/sgl_window.m.s
 
+SGL/src/sgl_draw.o: SGL/src/sgl_draw.c.o
+.PHONY : SGL/src/sgl_draw.o
+
+# target to build an object file
+SGL/src/sgl_draw.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sgl.dir/build.make CMakeFiles/sgl.dir/SGL/src/sgl_draw.c.o
+.PHONY : SGL/src/sgl_draw.c.o
+
+SGL/src/sgl_draw.i: SGL/src/sgl_draw.c.i
+.PHONY : SGL/src/sgl_draw.i
+
+# target to preprocess a source file
+SGL/src/sgl_draw.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sgl.dir/build.make CMakeFiles/sgl.dir/SGL/src/sgl_draw.c.i
+.PHONY : SGL/src/sgl_draw.c.i
+
+SGL/src/sgl_draw.s: SGL/src/sgl_draw.c.s
+.PHONY : SGL/src/sgl_draw.s
+
+# target to generate assembly for a file
+SGL/src/sgl_draw.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sgl.dir/build.make CMakeFiles/sgl.dir/SGL/src/sgl_draw.c.s
+.PHONY : SGL/src/sgl_draw.c.s
+
 SGL/src/sgl_errors.o: SGL/src/sgl_errors.c.o
 .PHONY : SGL/src/sgl_errors.o
 
@@ -227,6 +251,9 @@ help:
 	@echo "... SGL/src/cocoa/sgl_window.o"
 	@echo "... SGL/src/cocoa/sgl_window.i"
 	@echo "... SGL/src/cocoa/sgl_window.s"
+	@echo "... SGL/src/sgl_draw.o"
+	@echo "... SGL/src/sgl_draw.i"
+	@echo "... SGL/src/sgl_draw.s"
 	@echo "... SGL/src/sgl_errors.o"
 	@echo "... SGL/src/sgl_errors.i"
 	@echo "... SGL/src/sgl_errors.s"
