@@ -5,11 +5,11 @@
 int main(int argc, const char * argv[]) {
     SGL_Window *window = SGL_CreateWindow("SGL Window", 640, 480, SGL_DARKSKYBLUE);
 
-    // if (SGL_HasError()) {
-    //     fprintf(stderr, "Error creating window: %s\n", SGL_GetError().message);
-    //     SGL_ClearError();
-    //     return 1;
-    // }
+    if (SGL_HasError()) {
+        fprintf(stderr, "Error creating window: %s\n", SGL_GetError().message);
+        SGL_ClearError();
+        return 1;
+    }
 
     // Run the event loop
     bool quit = false;
