@@ -31,3 +31,19 @@ bool checker_pattern(SGL_Pattern data)
     }
     return true;
 }
+
+bool circle_pattern(SGL_Pattern data)
+{
+    sgl_fill(data.pixels, data.pixel_w, data.pixel_h, data.background_color);
+    
+    
+
+    const char *file_path = "../app/images/circle.ppm";
+    Errno err = sgl_ppm_write(data.pixels, data.pixel_w, data.pixel_h, file_path);
+    if (err)
+    {
+        fprintf (stderr, "ERROR: could not save file %s: %s\n", file_path, strerror(errno));
+        return false;
+    }
+    return true;
+}

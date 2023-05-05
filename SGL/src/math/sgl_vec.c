@@ -90,37 +90,28 @@ float dot4(SGL_Vec4 a, SGL_Vec4 b)
 
 SGL_Vec3 cross(SGL_Vec3 a, SGL_Vec3 b)
 {
-    SGL_Vec3 c;
-    c.x = a.y * b.z - a.z * b.y;
-    c.y = a.z * b.x - a.x * b.z;
-    c.z = a.x * b.y - a.y * b.x;
+    SGL_Vec3 c = {a.y * b.z - a.z * b.y,
+                  a.z * b.x - a.x * b.z,
+                  a.x * b.y - a.y * b.x
+                };
     return c;
 }
 
 SGL_Vec2 sgl_vec2_scalar(SGL_Vec2 a, float scalar)
 {
-    SGL_Vec2 b;
-    b.x = a.x * scalar;
-    b.y = a.y * scalar;
+    SGL_Vec2 b = {a.x * scalar, a.y * scalar};
     return b;
 }
 
 SGL_Vec3 sgl_vec3_scalar(SGL_Vec3 a, float scalar)
 {
-    SGL_Vec3 b;
-    b.x = a.x * scalar;
-    b.y = a.y * scalar;
-    b.z = a.z * scalar;
+    SGL_Vec3 b = {a.x * scalar, a.y * scalar, a.z * scalar};
     return b;
 }
 
 SGL_Vec4 sgl_vec4_scalar(SGL_Vec4 a, float scalar)
 {
-    SGL_Vec4 b;
-    b.x = a.x * scalar;
-    b.y = a.y * scalar;
-    b.z = a.z * scalar;
-    b.w = a.w * scalar;
+    SGL_Vec4 b = {a.x * scalar, a.y * scalar, a.z * scalar, a.w * scalar};
     return b;
 }
 

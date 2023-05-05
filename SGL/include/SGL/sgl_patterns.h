@@ -9,7 +9,7 @@
 
 #include "sgl_draw.h"
 
-typedef struct SGL_Pattern {
+typedef struct {
     uint32_t *pixels;
     size_t pixel_w;
     size_t pixel_h;
@@ -35,5 +35,6 @@ typedef struct SGL_Shape {
 
 
 bool checker_pattern(SGL_Pattern data);
+bool circle_pattern(SGL_Pattern data);
 
 #endif // SGL_PATTERNS_H

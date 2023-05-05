@@ -5,17 +5,19 @@
 
 #include "sgl_vec.h"
 
-typedef struct SGL_Mat2x2 {
+// R = Row vectors
+// C = Column vectors
+typedef struct {
     SGL_Vec2 R0, R1;
     SGL_Vec2 C0, C1;
 } SGL_Mat2x2;
 
-typedef struct SGL_Mat3x3 {
+typedef struct {
     SGL_Vec3 R0, R1, R2;
     SGL_Vec3 C0, C1, C2;
 } SGL_Mat3x3;
 
-typedef struct SGL_Mat4x4 {
+typedef struct {
     SGL_Vec4 R0, R1, R2, R3;
     SGL_Vec4 C0, C1, C2, C3;
 } SGL_Mat4x4;
