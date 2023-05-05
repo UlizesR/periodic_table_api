@@ -10,17 +10,14 @@
 bool checker_pattern(SGL_Pattern data)
 {
     sgl_fill(data.pixels, data.pixel_w, data.pixel_h, data.background_color);
-    SGL_Rect rect = { {0, 0}, data.pixel_w / data.cols, data.pixel_h / data.rows, SGL_WHITE };
-
+    
     for (int y = 0; y < data.rows; y++)
     {
         for (int x = 0; x < data.cols; x++)
         {
             uint32_t color = data.background_color;
-            if ((x + y) % 2 == 0) color = rect.color;
-            rect.origin.x += x*rect.w;
-            rect.origin.y += y*rect.h;
-            rect.color = color;
+            if ((x + y) % 2 == 0) color = SGL_RED;
+            SGL_Rect rect = {{x*data.cell_w, y*data.cell_h}, data.cell_w, data.cell_h, color};
             sgl_draw_rect(data.pixels, data.pixel_w, data.pixel_h, rect);
         }
     }

@@ -15,6 +15,8 @@ typedef struct SGL_Pattern {
     size_t pixel_h;
     size_t rows;
     size_t cols;
+    size_t cell_w;
+    size_t cell_h;
 
     uint32_t background_color;
 } SGL_Pattern;
