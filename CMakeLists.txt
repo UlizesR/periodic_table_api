@@ -25,11 +25,14 @@ file(GLOB_RECURSE SGL_SOURCES
 add_library(sgl STATIC ${SGL_SOURCES})
 
 # Set the include directories for the SGL library
-target_include_directories(sgl PUBLIC
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/SGL/include>
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/SGL/src>
-    $<INSTALL_INTERFACE:include>
-    PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/SGL/include/SGL
+target_include_directories(sgl 
+    PUBLIC
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/SGL/src>
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/SGL/include>
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/SGL/include/SGL>
+    PRIVATE 
+        ${CMAKE_CURRENT_SOURCE_DIR}/SGL/include/SGL
 )
 
 # Link the SGL library with the required macOS frameworks

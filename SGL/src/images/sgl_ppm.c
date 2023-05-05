@@ -1,4 +1,4 @@
-#include "image/sgl_ppm.h"
+#include "sgl_ppm.h"
 
 #define return_defer(value) do { result = (value); goto defer; } while (0)
 

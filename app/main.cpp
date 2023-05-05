@@ -14,14 +14,8 @@ static uint32_t pixels[HEIGHT * WIDTH];
 
 int main(int argc, char** argv)
 {
-    sgl_fill(pixels, WIDTH, HEIGHT, SGL_BLACK);
-    SGL_Rect rect = {{300, 300}, CELL_WIDTH, CELL_HEIGHT};
-    sgl_draw_rect(pixels, WIDTH, HEIGHT,rect, SGL_DARK_GOLDENROD);
-    const char* file_path = "../app/images/test2.ppm"; // save file to "images" directory
-    Errno err = sgl_ppm_write(pixels, WIDTH, HEIGHT, file_path);
-    if (err) {
-        fprintf (stderr, "ERROR: could not save file %s: %s\n", file_path, strerror(errno));
-        return 1;
-    }
+
+    SGL_Pattern data = { pixels, WIDTH, HEIGHT, ROWS, COLS, SGL_BLACK };
+    if (!checker_pattern(data)) return -1;
     return 0;
 }

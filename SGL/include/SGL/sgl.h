@@ -7,12 +7,12 @@
 extern "C" {
 #endif
 
-#include "image/sgl_draw.h"
+#include "sgl_draw.h"
 #include "sgl_errors.h"
-#include "image/sgl_ppm.h"
-#include "image/sgl_colors.h"
-#include "image/sgl_patterns.h"
-#include "image/sgl_pixels.h"
+#include "sgl_ppm.h"
+#include "sgl_colors.h"
+#include "sgl_patterns.h"
+#include "sgl_pixels.h"
 
 
 #ifdef __cplusplus
