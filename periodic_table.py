@@ -1,5 +1,5 @@
 from fastapi import FastAPI, HTTPException
-from typing import Union, Optional
+from typing import Optional
 import pandas as pd
 import numpy as np
 
