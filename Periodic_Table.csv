@@ -1,4 +1,4 @@
-Atomic Number,Element Name,Symbol,Atomic Weight,Period,Group,STP,Melting Point,Boiling Point,Density,Electronegativity,First Ionization Energy,Atomic Radius,Number of Protons,Number of Neutrons,Number of Electrons,Classification
+atomic_number,symbol,element_name,atomic_weight,period,group,stp,melting_point,boiling_point,density,electronegativity,first_ionization_energy,atomic_radius,num_protons,num_neutrons,num_electrons,classification
 1,H,Hydrogen,1.00797,1,1,gas,-259.14,-252.87,88,2.2,1312,25,1,0,1,NonMetal
 2,He,Helium,4.0026,1,18,gas,N/A,‑268.93,214,N/A,2372.32,31,2,2,2,NonMetal
 3,Li,Lithium,6.941,2,1,solid,180.54,1342,535,0.98,520.2,145,3,4,3,Alkali Metal
